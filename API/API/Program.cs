@@ -19,7 +19,9 @@ builder.Services.AddCors(o =>
                 .AllowAnyHeader();
         }));
 
-builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
+builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Default"),
+    providerOptions => providerOptions.EnableRetryOnFailure()
+    ));
 
 var app = builder.Build();
 

@@ -6,6 +6,7 @@ namespace API.Data
     {
         public DataContext(DbContextOptions<DataContext> options): base(options) 
         {
+            Database.EnsureCreated();
         }
 
         public DbSet<Movie> Movies { get; set; }
