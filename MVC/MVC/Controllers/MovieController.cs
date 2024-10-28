@@ -11,7 +11,7 @@ namespace MVC.Controllers
 
         public MovieController()
         {
-            var clientAddress = new Uri("http://localhost:5007");
+            var clientAddress = new Uri("http://ec2-44-202-20-186.compute-1.amazonaws.com");
             this.client = new HttpClient();
             this.client.BaseAddress = clientAddress;
         }
